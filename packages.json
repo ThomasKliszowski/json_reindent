@@ -1,0 +1,12 @@
+{
+  "packages": [
+    {
+      "author": "Thomas Kliszowski (@ThomasSki)",
+      "description": "Reindent JSON file or selection",
+      "homepage": "https://github.com/ThomasKli/json_reindent",
+      "last_modified": "2013-05-03 14:07:00",
+      "name": "JSON Reindent"
+    }
+  ],
+  "schema_version": "1.2"
+}
