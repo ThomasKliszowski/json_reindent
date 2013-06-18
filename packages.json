@@ -9,7 +9,7 @@
       "platforms": {
         "*": [
           {
-            "url": "http://github.com/ThomasKli/json_reindent/zipball/master",
+            "url": "https://nodeload.github.com/ThomasKli/json_reindent/zip/1.0.1",
             "version": "1.0.1"
           }
         ]
