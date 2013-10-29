@@ -3,13 +3,13 @@
     {
       "author": "Thomas Kliszowski (@ThomasSki)",
       "description": "Reindent JSON file or selection",
-      "homepage": "https://github.com/ThomasKli/json_reindent",
-      "last_modified": "2013-06-17 16:16:00",
+      "homepage": "https://github.com/ThomasKliszowski/json_reindent",
+      "last_modified": "2013-10-29 23:33:00",
       "name": "JSON Reindent",
       "platforms": {
         "*": [
           {
-            "url": "https://nodeload.github.com/ThomasKli/json_reindent/zip/1.0.1",
+            "url": "https://nodeload.github.com/ThomasKliszowski/json_reindent/zip/1.0.1",
             "version": "1.0.1"
           }
         ]
