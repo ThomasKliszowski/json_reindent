@@ -9,8 +9,8 @@
       "platforms": {
         "*": [
           {
-            "url": "https://nodeload.github.com/ThomasKliszowski/json_reindent/zip/1.0.1",
-            "version": "1.0.1"
+            "url": "https://nodeload.github.com/ThomasKliszowski/json_reindent/zip/1.0.2",
+            "version": "1.0.2"
           }
         ]
       }
