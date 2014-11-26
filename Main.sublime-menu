@@ -1,0 +1,34 @@
+[
+  {
+    "caption": "Preferences",
+    "id": "preferences",
+    "mnemonic": "n",
+    "children":
+    [
+      {
+        "caption": "Package Settings",
+        "mnemonic": "P",
+        "id": "package-settings",
+        "children":
+        [
+          {
+            "caption": "JSON Reindent",
+            "children":
+            [
+              {
+                "command": "open_file",
+                "args": {"file": "${packages}/JSON Reindent/JSONReindent.sublime-settings"},
+                "caption": "Settings – Default"
+              },
+              {
+                "command": "open_file",
+                "args": {"file": "${packages}/User/JSONReindent.sublime-settings"},
+                "caption": "Settings – User"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
