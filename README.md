@@ -7,8 +7,10 @@ Sublime Text 2/3 Plugin - JSON Reindent: reindent file or selection
 Usage
 -----
 
-Open your Sublime Text command palette (Ctrl+Shift+P) and type "JSON Reindent".
+Open your Sublime Text command palette (**Ctrl+Shift+P**) and type "**JSON Reindent**".
+
 This will reindent your whole file, or your selection if exists.
+
 The error output is in your Sublime Text Console.
 
 
