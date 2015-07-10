@@ -50,7 +50,8 @@ class JsonReindentCommand(TextCommand):
                     json_data,
                     indent=self.view.settings().get("tab_size", 2),
                     separators=(',', ': '),
-                    sort_keys=settings.get('sort_keys') is True
+                    sort_keys=settings.get('sort_keys') is True,
+                    ensure_ascii=False
                 )
             )
 
