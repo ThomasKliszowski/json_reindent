@@ -2,6 +2,7 @@ from sublime_plugin import TextCommand
 import sublime
 import collections
 import json
+import yaml
 import logging
 
 logger = logging.getLogger(__name__)
@@ -11,7 +12,7 @@ SETTINGS_FILE = "JSONReindent.sublime-settings"
 settings = {}
 
 
-class JsonReindentCommand(TextCommand):
+class SublimeJsonReindentCommand(TextCommand):
 
     def run(self, edit, syntax_sensitive=False):
         if self.region_set_empty(self.view.sel()):
@@ -36,10 +37,7 @@ class JsonReindentCommand(TextCommand):
             params['object_pairs_hook'] = collections.OrderedDict
 
         try:
-            json_data = json.loads(
-                content,
-                strict=settings.get('strict') is True,
-                **params)
+            json_data = yaml.load(content)
         except Exception as e:
             logger.error(e, exc_info=True)
         else:

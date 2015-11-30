@@ -1,6 +1,6 @@
 [
   {
     "caption": "JSON Reindent: reindent file or selection",
-    "command": "json_reindent"
+    "command": "sublime_json_reindent"
   }
 ]
