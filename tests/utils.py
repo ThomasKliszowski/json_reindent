@@ -9,7 +9,7 @@ def get_static_content(filename):
         return fp.read().decode('utf-8')
 
 
-def assert_static_test(static_test):
+def assert_static_test(static_test, value=True):
     data = parse_input(get_static_content('%s/test.json' % static_test))
     output = format_output(data)
-    assert output == get_static_content('%s/result.json' % static_test)
+    assert (output == get_static_content('%s/result.json' % static_test)) == value

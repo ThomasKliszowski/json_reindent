@@ -11,13 +11,11 @@ def test_unicode():
 
 
 def test_order():
-    assert_static_test('order')
-
-
-def test_no_collections():
-    data = parse_input(get_static_content('order/test.json'), use_collections=False)
-    output = format_output(data)
-    assert output != get_static_content('order/result.json')
+    import collections
+    if hasattr(collections, 'OrderedDict'):
+        assert_static_test('order')
+    else:
+        assert_static_test('order', False)
 
 
 def test_trailing_comma():
