@@ -6,7 +6,10 @@ CURRENT_DIR = op.dirname(__file__)
 
 def get_static_content(filename):
     with open(op.join(CURRENT_DIR, 'static', filename), 'r') as fp:
-        return fp.read().decode('utf-8')
+        content = fp.read()
+        if isinstance(content, str):
+            content = content.decode('utf-8')
+        return content
 
 
 def assert_static_test(static_test, value=True):
