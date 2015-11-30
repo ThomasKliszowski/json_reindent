@@ -7,7 +7,7 @@ CURRENT_DIR = op.dirname(__file__)
 def get_static_content(filename):
     with open(op.join(CURRENT_DIR, 'static', filename), 'r') as fp:
         content = fp.read()
-        if isinstance(content, str):
+        if hasattr(content, 'decode'):
             content = content.decode('utf-8')
         return content
 
