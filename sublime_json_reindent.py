@@ -1,8 +1,6 @@
 from sublime_plugin import TextCommand
+from .json_reindent import parse_input, format_output
 import sublime
-import collections
-import json
-import yaml
 import logging
 
 logger = logging.getLogger(__name__)
@@ -31,26 +29,22 @@ class SublimeJsonReindentCommand(TextCommand):
     def parse_region(self, edit, region):
         content = self.view.substr(region)
 
-        # Use OrderedDict if exists
-        params = {}
-        if hasattr(collections, 'OrderedDict'):
-            params['object_pairs_hook'] = collections.OrderedDict
-
         try:
-            json_data = yaml.load(content)
+            json_data = parse_input(content)
         except Exception as e:
             logger.error(e, exc_info=True)
         else:
+            output = format_output(
+                json_data,
+                indent=self.view.settings().get("tab_size", 2),
+                separators=(",", ": "),
+                sort_keys=settings.get("sort_keys") is True,
+                ensure_ascii=False
+            )
             self.view.replace(
                 edit,
                 region,
-                json.dumps(
-                    json_data,
-                    indent=self.view.settings().get("tab_size", 2),
-                    separators=(',', ': '),
-                    sort_keys=settings.get('sort_keys') is True,
-                    ensure_ascii=False
-                )
+                output
             )
 
 
