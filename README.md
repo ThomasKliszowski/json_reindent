@@ -1,11 +1,14 @@
-JSONReindent
-============
+# JSONReindent
+
+[![Build Status](https://travis-ci.org/ThomasKliszowski/json_reindent.svg?branch=master)](https://travis-ci.org/ThomasKliszowski/json_reindent)
+[![Coverage Status](https://coveralls.io/repos/ThomasKliszowski/json_reindent/badge.svg?branch=master&service=github)](https://coveralls.io/github/ThomasKliszowski/json_reindent?branch=master)
+
+## Description
 
 Sublime Text 2/3 Plugin - JSON Reindent: reindent file or selection
 
 
-Usage
------
+## Usage
 
 Open your Sublime Text command palette (**Ctrl+Shift+P**) and type "**JSON Reindent**".
 
@@ -14,8 +17,7 @@ This will reindent your whole file, or your selection if exists.
 The error output is in your Sublime Text Console.
 
 
-Logs
-----
+## Logs
 
 - 1.1.1: Fix non-ascii bug.
 - 1.1.0: Disable sorting by default, add a settings file to enable it (see Settings > JSON Reindent > Settings - Default) only on ST3.
