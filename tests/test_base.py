@@ -1,5 +1,6 @@
 from .utils import get_static_content, assert_static_test
 from json_reindent import parse_input, format_output
+import json
 
 
 def test_base():
@@ -23,6 +24,12 @@ def test_trailing_comma():
 
 
 def test_indent():
-    data = parse_input(get_static_content('indent/test.json'), use_collections=False)
+    data = parse_input(get_static_content('indent/test.json'))
     output = format_output(data, indent=4)
     assert output == get_static_content('indent/result.json')
+
+
+def test_no_collections():
+    data = parse_input(get_static_content('base/test.json'), use_collections=False)
+    output = format_output(data)
+    assert json.loads(output) == json.loads(get_static_content('base/result.json'))
