@@ -19,7 +19,8 @@ The error output is in your Sublime Text Console.
 
 ## Logs
 
-- 1.1.1: Fix non-ascii bug.
-- 1.1.0: Disable sorting by default, add a settings file to enable it (see Settings > JSON Reindent > Settings - Default) only on ST3.
-- 1.0.1: JSON Reindent now uses  users's tab_size instead of 2 spaces to indent json
-- 1.0: Enable user to reindent current file or selection (single or multiple), silent if it can't
+- **2.0.0**: Use PyYAML to parse user input because YAML is a superset of JSON. This way, the script is less restrictive than the use of the JSON parser, ie: the plugin is able to parse a JSON with trailing commas. In addition to that, you can parse a YAML file and format it to JSON by using this plugin.
+- **1.1.1**: Fix non-ascii bug.
+- **1.1.0**: Disable sorting by default, add a settings file to enable it (see Settings > JSON Reindent > Settings - Default) only on ST3.
+- **1.0.1**: JSON Reindent now uses  users's tab_size instead of 2 spaces to indent json
+- **1.0**: Enable user to reindent current file or selection (single or multiple), silent if it can't
