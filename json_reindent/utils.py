@@ -1,13 +1,33 @@
+import json
 import yaml
 import collections
+import logging
+
+logger = logging.getLogger(__name__)
 
 
-def ordered_load(stream, Loader=yaml.Loader, use_collections=True):
+def ordered_load(stream, use_collections=True):
     if use_collections and hasattr(collections, 'OrderedDict'):
         object_pairs_hook = collections.OrderedDict
     else:
         object_pairs_hook = dict
 
+    try:
+        return yaml_ordered_load(stream, object_pairs_hook)
+    except Exception as e:
+        logger.error(e, exc_info=True)
+
+        return json_ordered_load(stream, object_pairs_hook)
+
+
+def json_ordered_load(stream, object_pairs_hook):
+    return json.loads(
+        stream,
+        strict=False,
+        object_pairs_hook=object_pairs_hook)
+
+
+def yaml_ordered_load(stream, object_pairs_hook, Loader=yaml.Loader):
     class OrderedLoader(Loader):
         pass
 

@@ -33,3 +33,9 @@ def test_no_collections():
     data = parse_input(get_static_content('base/test.json'), use_collections=False)
     output = format_output(data)
     assert json.loads(output) == json.loads(get_static_content('base/result.json'))
+
+
+def test_fail_yaml():
+    data = parse_input(get_static_content('fail_yaml/test.json'))
+    output = format_output(data)
+    assert json.loads(output) == json.loads(get_static_content('fail_yaml/result.json'))
