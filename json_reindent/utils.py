@@ -21,10 +21,18 @@ def ordered_load(stream, use_collections=True):
 
 
 def json_ordered_load(stream, object_pairs_hook):
-    return json.loads(
-        stream,
-        strict=False,
-        object_pairs_hook=object_pairs_hook)
+    params = {
+        's': stream,
+        'strict': False,
+        'object_pairs_hook': object_pairs_hook
+    }
+
+    try:
+        return json.loads(**params)
+    except TypeError:
+        # Fix python 2.6
+        del params['object_pairs_hook']
+        return json.loads(**params)
 
 
 def yaml_ordered_load(stream, object_pairs_hook, Loader=yaml.Loader):
