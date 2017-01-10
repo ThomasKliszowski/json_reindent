@@ -1,5 +1,5 @@
 import json
-from json_reindent.utils import ordered_load
+from .utils import ordered_load
 
 
 def parse_input(content, *args, **kwargs):
