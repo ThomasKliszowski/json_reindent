@@ -1,5 +1,10 @@
+# Fix sublime text 2 / 3 compatibility
+try:
+    from json_reindent.utils import ordered_load
+except ImportError:
+    from .utils import ordered_load
+
 import json
-from .utils import ordered_load
 
 
 def parse_input(content, *args, **kwargs):

@@ -1,5 +1,10 @@
+# Fix sublime text 2 / 3 compatibility
+try:
+    from json_reindent import parse_input, format_output
+except ImportError:
+    from .json_reindent import parse_input, format_output
+
 from sublime_plugin import TextCommand
-from .json_reindent import parse_input, format_output
 import sublime
 import logging
 
