@@ -1,5 +1,5 @@
 from sublime_plugin import TextCommand
-from .json_reindent import parse_input, format_output
+from json_reindent import parse_input, format_output
 import sublime
 import logging
 
